@@ -7,5 +7,14 @@ public class Comprobante {
     public double saldoResultante;
 
 
-
+    public void comprobante(){
+        System.out.println("--- Comprobante De Transaccion ---" +
+                "\nID TX:" + idTX +
+                "\nFecha:"+fechaHora+
+                "\nOperacion:"+tipoOperacion +
+                "\nSucursal"+sucursal+
+                "\nValor Retiro:" +valorRetiro+
+                "\nSaldo Resultante:"+saldoResultante+
+                "---------------------------------------------");
+    }
 }

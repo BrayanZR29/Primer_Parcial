@@ -3,4 +3,6 @@ public class Operacion {
     public int monto;
     public String fechaHoraOperacion;
 
+
+
 }
