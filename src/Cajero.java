@@ -12,4 +12,7 @@ public class Cajero {
     public void registrarOperacion(){
         cuenta.consultar();
     }
+    public void menu(){
+        System.out.println("");
+    }
 }
