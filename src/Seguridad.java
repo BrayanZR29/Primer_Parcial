@@ -1,8 +1,15 @@
 public class Seguridad {
-    public String clave;
+    private String clave;
 
-    public String clave_integrada(String clave_integrada){
-        System.out.println("probando");
-        return clave_integrada;
+    public Seguridad(String clave) {
+        this.clave = clave;
+    }
+
+    public boolean validarClave(String claveIngresada) {
+        return clave.equals(claveIngresada);
+    }
+
+    public void cambiarClave(String nuevaClave) {
+        this.clave = nuevaClave;
     }
 }

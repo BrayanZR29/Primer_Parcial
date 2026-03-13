@@ -1,18 +1,26 @@
 public class Cajero {
-    public String idcajero;
-    public String ubicacion;
-    public int retirosHoy;
+    private String idCajero;
+    private String ubicacion;
+    private int retirosHoy;
 
-   Cuenta cuenta = new Cuenta();
-
-    public double validarRetiro(double monto){
-        return monto;
+    public Cajero(String idCajero, String ubicacion) {
+        this.idCajero = idCajero;
+        this.ubicacion = ubicacion;
+        this.retirosHoy = 0;
     }
 
-    public void registrarOperacion(){
-        cuenta.consultar();
+    public boolean validarRetiro(double monto) {
+        if(retirosHoy >= 3) return false;
+        if(monto < 20000 || monto > 400000) return false;
+        retirosHoy++;
+        return true;
     }
-    public void menu(){
-        System.out.println("");
+
+    public void registrarOperacion(Operacion op) {
+        System.out.println("Operación registrada en cajero " + idCajero);
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
     }
 }

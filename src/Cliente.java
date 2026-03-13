@@ -1,38 +1,27 @@
 public class Cliente {
-    public String id;
-    public String nombre;
-    public int numero_documento;
-    public String cuenta;
+    private String id;
+    private String nombre;
+    private String numeroDocumento;
+    private Cuenta cuenta;
+    private Seguridad seguridad;
 
-    public String getCuenta() {
+    public Cliente(String id, String nombre, String numeroDocumento, Cuenta cuenta, Seguridad seguridad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.numeroDocumento = numeroDocumento;
+        this.cuenta = cuenta;
+        this.seguridad = seguridad;
+    }
+
+    public boolean validarClave(String clave) {
+        return seguridad.validarClave(clave);
+    }
+
+    public Cuenta getCuenta() {
         return cuenta;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getNumero_documento() {
-        return numero_documento;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setNumero_documento(int numero_documento) {
-        this.numero_documento = numero_documento;
-    }
-
-    public void setCuenta(String cuenta) {
-        this.cuenta = cuenta;
+    public Seguridad getSeguridad() {
+        return seguridad;
     }
 }

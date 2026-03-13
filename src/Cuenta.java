@@ -1,25 +1,27 @@
-import java.util.Scanner;
-
 public class Cuenta {
-    public int numero_cuenta;
-    public double saldo;
-    public String tipo_cuenta;
+    private String numeroCuenta;
+    private double saldo;
+    private String tipoCuenta;
 
-    Cliente cliente = new Cliente();
-
-    public double depositar(double monto){
-        return monto;
+    public Cuenta(String numeroCuenta, double saldo, String tipoCuenta) {
+        this.numeroCuenta = numeroCuenta;
+        this.saldo = saldo;
+        this.tipoCuenta = tipoCuenta;
     }
 
-    public double retirar(double monto){
-        return monto;
+    public void depositar(double monto) {
+        saldo += monto;
     }
 
-    public void consultar(){
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("\ndigite su usuario: ");
-        cliente.nombre = teclado.nextLine();
-        System.out.println("\ndigite su numero de documento: ");
-        cliente.numero_documento = teclado.nextInt();
+    public boolean retirar(double monto) {
+        if(monto >= 20000 && monto <= 400000 && monto <= saldo) {
+            saldo -= monto;
+            return true;
+        }
+        return false;
+    }
+
+    public double consultarSaldo() {
+        return saldo;
     }
 }
